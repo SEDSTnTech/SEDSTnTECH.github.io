@@ -1,0 +1,70 @@
+@import "common.css";
+body {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+main {
+    text-align: center;
+}
+main p {
+    width: 70%;
+    margin: 3em auto;
+    font-size: 24px;
+    padding: 40px;
+    background: #334;
+    border-radius: 30px;
+    border: 2px solid #778;
+}
+main p em {
+    color: gold;
+    font-size: 200%;
+    font-style: normal;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid #667;
+    right: 0;
+}
+form {
+    padding: 60px 50px 40px 50px;
+    background: #445;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    border-radius: 75px;
+    border: 2px solid #778;
+}
+@media(max-width:700px) {
+    main p {
+        font-size: 20px;
+        margin-top: 2em;
+        border-radius: 15px;
+    }
+    form {
+        padding: 25px 30px 20px 30px;
+    }
+}
+@media(max-width:500px) {
+    main p {
+        padding: 25px 20px;
+    }
+}
+@media(min-width:1000px) {
+    footer {
+        border: 2px solid #667;
+        border-width: 2px 2px 0 2px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    nav {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+}

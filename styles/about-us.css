@@ -1,0 +1,133 @@
+@import "common.css";
+body {
+    background:#334;
+}
+main {
+    max-width: 80ch;
+    margin: auto;
+    padding: 0 20px;
+}
+p {
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+main > .flex:nth-of-type(1) {
+    flex-direction: row-reverse;
+}
+.flex {
+    display: flex;
+    margin: 2em 0;
+}
+.flex > img {
+    width: 35%;
+    flex-shrink: 0;
+    margin: 20px;
+    align-self: flex-start;
+    border-radius: 5px;
+    border: 2px solid #778;
+}
+h1 {
+    margin-top: 2em;
+}
+h1,h2 {
+    text-align: center;
+}
+
+.meetings > div {
+    width: calc(100%/3 - 20px);
+    margin: 0 10px;
+    padding: 0 10px;
+    background: #445;
+    border: 2px solid #556;
+    border-radius: 10px;
+}
+.meetings > div > h3 {
+    text-align: center;
+}
+.meetings > div > img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #778;
+}
+.meetings > div > p {
+    padding: 0 8px;
+}
+.columns {
+    columns: 3;
+}
+#Officers > div {
+    background: #445;
+    border: 2px solid #556;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+#Officers h3 {
+    font-size: 25px;
+}
+#Officers img {
+    min-width: 25%;
+    border-radius: 50%;
+}
+@media(min-width:1000px) {
+    body {
+        border: 2px solid #667;
+        border-width: 0 2px 0 2px;
+    }
+    nav {
+        border-width: 0 0 2px 0;
+    }
+}
+@media(max-width:700px) { 
+    div.flex {
+        display: block;
+        text-align: center;
+    }
+    .flex img {
+        width: 85%;
+        max-height: 50vh;
+        object-fit: cover;
+    }
+    .flex p {
+        text-align: left;
+    }
+    .columns {
+        columns: 2;
+    }
+    .meetings div {
+        width: 85%;
+        margin-bottom: 2em;
+    }
+    .meetings div img {
+        width: 75%;
+        max-width: 500px;
+        min-width: 250px;
+        object-fit: cover;
+    }
+    #Officers img {
+        float: left;
+        width: 30vw;
+    }
+    #Officers h3 {
+        margin-top: 2em;
+    }
+    #Officers p::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@media(max-width:500px) {
+    .columns {
+        columns: 1;
+    }
+    #Officers img {
+        float: none;
+        height: 20vh;
+        width: 20vh;
+        margin-bottom: 0;
+    }
+    #Officers h3 {
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,92 @@
+@import "common.css";
+main {
+    background: #334;
+}
+div.flex {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+main > div.flex {
+    margin: 0 20px;
+    padding-top: 20px;
+    width: calc(100% - 40px);
+}
+div.flex > div {
+    flex: 1;
+    background: #445;
+    position: relative;
+    border: 2px solid #778;
+    border-radius: 10px;
+    margin: 10px;
+}
+div.flex > div > img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 2px solid #778;
+}
+div.flex > div > p {
+    padding: 0 15px;
+    margin-bottom: 60px;
+}
+div.flex > div > div {
+    position: absolute;
+    height: 60px;
+    line-height: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+article {
+    padding: 2em 30px;
+}
+article > h2 {
+
+}
+article > h2 > span {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 8px solid gold;
+}
+article > div.flex p {
+    text-align: left;
+}
+article > div.flex img {
+    width: 50%;
+    align-self: flex-start;
+    border-radius: 10px;
+    flex-shrink: 0;
+    border: 2px solid #778;
+    margin: 20px;
+}
+@media(min-width:1000px) {
+    main {
+        border: 2px solid #667;
+        border-width: 0 2px 0 2px;
+    }
+    footer {
+        border: 2px solid #667;
+        border-width: 0 2px 0 2px;
+    }
+}
+@media(max-width:700px) { 
+    div.flex {
+        display: block;
+        text-align: center;
+    }
+    .flex img {
+        width: 85%;
+        max-height: 50vh;
+        object-fit: cover;
+    }
+    .flex p {
+        text-align: left;
+    }
+    div.flex > div {
+        margin: 2em 0;
+    }
+    article > div.flex img {
+        width: 85%;
+    }
+}

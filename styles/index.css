@@ -1,0 +1,82 @@
+@import 'common.css';
+main {
+
+}
+main img.logo {
+    width: 95%;
+    margin: 0 2.5%;
+    filter: drop-shadow(0 0 20px black);
+}
+main h1 {
+    text-align: center;
+}
+#PhotoOfTheWeek {
+    padding: 2em 0;
+    background: #223;
+}
+#UpcomingEvents {
+    padding: 2em 0;
+    background: #223;
+}
+#UpcomingEvents article {
+    display: flex;
+    width: 80%;
+    margin: 2em auto;
+    padding: 2em;
+    background: #334;
+    border: 2px solid #445;
+    border-radius: 20px;
+}
+#UpcomingEvents article img {
+    width: 35%;
+    flex-shrink: 0;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 2px solid #778;
+    align-self: flex-start;
+}
+#UpcomingEvents article > div {
+    padding-left: 30px;
+    min-width: 200px;
+}
+#UpcomingEvents article h2 {
+    margin-top: 0;
+}
+#UpcomingEvents article p {
+    text-align: left;
+}
+#UpcomingEvents article time {
+    font: 16px/1.3 monospace;
+}
+@media(min-width:1000px) {
+    nav {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    footer {
+        border: 2px solid #667;
+        border-width: 0 2px 0 2px;
+    }
+    #PhotoOfTheWeek {
+        border: 2px solid #667;
+        border-width: 2px 2px 0 2px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    #UpcomingEvents {
+        border: 2px solid #667;
+        border-width: 0 2px 0 2px;
+    }
+}
+
+@media(max-width:700px) {
+    #UpcomingEvents article {
+        display: block;
+        margin: 3em auto;
+    }
+    #UpcomingEvents article img {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto 1em auto;
+    }
+}
