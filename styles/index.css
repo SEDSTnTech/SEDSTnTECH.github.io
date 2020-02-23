@@ -74,6 +74,9 @@ main h1 {
         display: block;
         margin: 3em auto;
     }
+    #UpcomingEvents article > div {
+        padding: 0;
+    }
     #UpcomingEvents article img {
         max-width: 500px;
         width: 100%;

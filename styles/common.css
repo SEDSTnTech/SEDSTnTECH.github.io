@@ -150,8 +150,8 @@ footer div.socials img {
         padding: 0;
         position: relative;
         z-index: 1000;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(30px);
+        background: rgb(34, 34, 51);
+        border-bottom: 10px solid rebeccapurple;
     }
 
     nav.open .nav-links > li {
@@ -183,5 +183,11 @@ footer div.socials img {
     }
     footer div.socials img {
         margin: 10px 4px;
+    }
+}
+@supports(backdrop-filter:blur(30px)) {
+    nav.open .nav-links {
+        background: rgba(34, 34, 51,0.75);
+        backdrop-filter:blur(30px)
     }
 }

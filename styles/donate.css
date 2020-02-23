@@ -1,9 +1,7 @@
 @import "common.css";
 body {
     min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
+} 
 main {
     text-align: center;
 }
@@ -26,35 +24,27 @@ main p em {
     letter-spacing: -2px;
 }
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     border-top: 2px solid #667;
+    position: fixed;
+    bottom: 0;
     right: 0;
+    left: 0;
+    max-width: 1000px;
+    margin: auto;
 }
 form {
-    padding: 60px 50px 40px 50px;
+    padding: 30px 20px;
     background: #445;
     width: 200px;
     height: 50px;
     margin: auto;
     border-radius: 75px;
     border: 2px solid #778;
+    margin-bottom: 72px;
 }
 @media(max-width:700px) {
-    main p {
-        font-size: 20px;
-        margin-top: 2em;
-        border-radius: 15px;
-    }
-    form {
-        padding: 25px 30px 20px 30px;
-    }
 }
 @media(max-width:500px) {
-    main p {
-        padding: 25px 20px;
-    }
 }
 @media(min-width:1000px) {
     footer {
