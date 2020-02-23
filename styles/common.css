@@ -123,6 +123,7 @@ footer div.socials img {
 @media(max-width:700px) {
     .nav-links {
         display: block;
+        height: 64px;
     }
     .nav-links button {
         display: block;
@@ -147,6 +148,7 @@ footer div.socials img {
     }
     nav.open .nav-links {
         display: block;
+        height: unset;
         padding: 0;
         position: relative;
         z-index: 1000;

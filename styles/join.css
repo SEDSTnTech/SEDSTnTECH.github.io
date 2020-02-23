@@ -1,4 +1,5 @@
 @import "common.css";
+
 main {
     height: calc(100vh - 106px);
     background: #334;
@@ -9,13 +10,16 @@ div.flex {
     width: 100%;
     text-align: center;
     padding-top: 30px;
-    height: calc(100vh - 106px);
+    height: calc(100vh - 136px);
     flex-wrap: wrap;
+    overflow-y: auto;
 }
-div.flex > div {
+
+div.flex>div {
     flex: 1;
     margin: 15px 5px;
 }
+
 div.flex button {
     appearance: none;
     font-size: 35px;
@@ -28,19 +32,78 @@ div.flex button {
     padding: 35px;
     -webkit-appearance: none;
     border: 2px solid hsl(271, 70%, 28%);
-    background:rebeccapurple;
+    background: rebeccapurple;
 }
+
 div.flex button img {
     display: block;
     width: 60px;
     height: 60px;
     margin: 15px auto;
 }
+
 div.flex button:hover {
     color: gold;
 }
+
 div.flex iframe {
     display: none;
+}
+
+div.flex.active {
+    height: 100%;
+    padding: 0 5px;
+    width: calc(100% - 10px);
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 250px 1fr;
+    grid-template-areas: "form .""form .";
+}
+div.flex.active div {
+    margin: 15px 0;
+}
+
+div.flex.active>div.active {
+    grid-area: form;
+    background: #445;
+    border-radius: 10px;
+    margin: 15px 10px 0 0;
+}
+
+div.flex.active>div.active iframe {
+    display: block;
+    width: 100%;
+    height: calc(100% - 60px);
+    border: 0;
+}
+
+div.flex.active>div.active button {
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    border: 0;
+    border-bottom: 2px solid hsl(271, 70%, 28%);
+    font-size: 24px;
+    line-height: 60px;
+    cursor: default;
+    letter-spacing: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+div.flex.active>div.active button:hover {
+    color: white;
+}
+
+div.flex.active>div.active button:focus {
+    outline: none;
+}
+
+div.flex.active>div.active button img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0 20px 0;
+    height: 30px;
 }
 
 @media(min-width:1000px) {
@@ -48,11 +111,69 @@ div.flex iframe {
         border: 2px solid #667;
         border-width: 0 2px 0 2px;
     }
+
     nav {
         border-width: 0 2px 2px 2px;
     }
+
     footer {
         border: 2px solid #667;
         border-width: 0 2px 0 2px;
+    }
+}
+@media(max-width:700px) {
+    div.flex.active {
+        grid-template-columns: 1fr 150px;
+        grid-template-rows: 150px 1fr;
+    }
+    div.flex.active button {
+        font-size: 20px;
+        letter-spacing: 0;
+        padding: 10px;
+        width: 120px;
+        height: 120px;
+    }
+    div.flex.active button img {
+        display: none;
+    }
+}
+@media(max-width: 500px) {
+    div.flex {
+        display: block;
+    }
+    div.flex > div {
+        width: 85%;
+        margin: 15px auto;
+    }
+    div.flex.active div {
+        width: 100%;
+    }
+    div.flex div button {
+        width: 100%;
+        padding: 20px;
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+    div.flex.active {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 1fr;
+        grid-template-areas: ". ." "form form";
+    }
+    div.flex.active div.active {
+        margin: 0;
+    }
+    div.flex.active div {
+        margin: 0;
+    }
+    div.flex.active div button {
+        width: 100%;
+        height: 60px;
+        background: transparent;
+        border: 0;
+        text-decoration: underline;
+    }
+    div.flex.active div.active button {
+        background: rebeccapurple;
+        text-decoration: none;
     }
 }
