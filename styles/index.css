@@ -11,8 +11,65 @@ main h1 {
     text-align: center;
 }
 #PhotoOfTheWeek {
-    padding: 2em 0;
+    padding: 2em 0 0 0;
     background: #223;
+}
+.swipe {
+    width: 100%;
+    height: 600px;
+    margin: 20px auto 0 auto;
+}
+.swipe-wrap {
+    height: 600px;
+}
+.swipe-wrap > figure {
+    font-size: 0;
+}
+.swipe-wrap > figure > figcaption {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    right: -2px;
+    text-align: center;
+    margin: 0 7.5%;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.75);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 5px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.swipe-wrap > figure:hover > figcaption {
+    white-space: normal;
+    overflow: visible;
+}
+.swipe-wrap > figure > img {
+    width: 85%;
+    margin: 0 7.5% 0 7.5%;
+    border: 2px solid #778;
+    object-fit: cover;
+    max-height: 594px;
+    border-radius: 10px;
+}
+.swipe button {
+    position: absolute;
+    top: calc(50% - 25px);
+    bottom: calc(50% - 25px);
+    width: 50px;
+    background: rebeccapurple;
+    cursor: pointer;
+    font-size: 0;
+    border-radius: 50%;
+    border: 0;
+}
+.swipe button.next {
+    right: 5px;
+}
+.swipe button.prev {
+    left: 5px;
 }
 #UpcomingEvents {
     padding: 2em 0;
