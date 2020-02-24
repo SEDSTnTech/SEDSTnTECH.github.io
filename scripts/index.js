@@ -7,26 +7,34 @@ window.onload = function () {
 
     let carousel = document.querySelector('.swipe');
 
+    let figures = document.querySelectorAll('.swipe figure');
+    let elem = figures[0];
+    let height = elem.querySelector('img').clientHeight;
+    document.querySelector('.swipe').style.maxHeight = height + 4 + 'px';
+    document.querySelector('.swipe-wrap').style.maxHeight = height + 4 + 'px';
+
     window.carousel = new Swipe(carousel, {
         startSlide: 0,
         draggable: true,
-        autoRestart: false,
         continuous: true,
-        disableScroll: true,
-        stopPropagation: true,
+        disableScroll: false,
+        stopPropagation: false,
+        callback: function () {
+            let pos = window.carousel.getPos();
+            let figures = document.querySelectorAll('.swipe figure');
+            let elem = figures[pos];
+            let height = elem.querySelector('img').clientHeight;
+            document.querySelector('.swipe').style.maxHeight = height + 4 + 'px';
+            document.querySelector('.swipe-wrap').style.maxHeight = height + 4 + 'px';
+        }
     });
-    let figures = document.querySelectorAll('.swipe figure')
-    for (let i = 0; i < figures.length; i++) {
-        let height = figures[i].querySelector('img').offsetHeight;
-        let offset = (600 - height - 10) / 2;
-        figures[i].style.top = offset + 'px';
-    }
 }
-window.addEventListener('resize', function() {
-    let figures = document.querySelectorAll('.swipe figure')
-    for (let i = 0; i < figures.length; i++) {
-        let height = figures[i].querySelector('img').offsetHeight;
-        let offset = (600 - height) / 2;
-        figures[i].style.top = offset + 'px';
-    }
+
+window.addEventListener('resize', function () {
+    let pos = window.carousel.getPos();
+    let figures = document.querySelectorAll('.swipe figure');
+    let elem = figures[pos];
+    let height = elem.querySelector('img').clientHeight;
+    document.querySelector('.swipe').style.maxHeight = height + 4 + 'px';
+    document.querySelector('.swipe-wrap').style.maxHeight = height + 4 + 'px';
 })
