@@ -13,11 +13,13 @@ main h1 {
 }
 .swipe {
     width: 100%;
+    overflow: hidden;
     margin: 20px auto 0 auto;
     transition: .2s max-height;
 }
 .swipe-wrap {
     transition: .2s max-height;
+    overflow: hidden;
 }
 .swipe-wrap > figure {
     font-size: 0;
