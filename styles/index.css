@@ -13,7 +13,6 @@ main h1 {
 }
 .swipe {
     width: 100%;
-    overflow: hidden;
     margin: 20px auto 0 auto;
     transition: .2s max-height;
 }
@@ -23,54 +22,60 @@ main h1 {
 }
 .swipe-wrap > figure {
     font-size: 0;
+    text-align: center;
 }
 .swipe-wrap > figure > figcaption {
     font-size: 16px;
-    position: absolute;
-    bottom: 2px;
-    left: 2px;
-    right: -2px;
     text-align: center;
     margin: 0 7.5%;
-    line-height: 1.5;
-    background: rgba(0,0,0,0.75);
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    padding: 5px 10px;
+    line-height: 2;
+    height: 32px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.swipe-wrap > figure:hover > figcaption {
-    white-space: normal;
-    overflow: visible;
+.swipe-wrap > figure > figcaption * {
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
+
 .swipe-wrap > figure > img {
-    width: 85%;
+    max-width: 85%;
     margin: 0 7.5% 0 7.5%;
     border: 2px solid #778;
     object-fit: cover;
-    max-height: 594px;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 80vh;
     border-radius: 10px;
 }
 .swipe button {
     position: absolute;
     top: 0;
     bottom: 0;
+    padding: 0;
     width: 7.5%;
     background: transparent;
     cursor: pointer;
     font-size: 0;
     border: 0;
 }
+.swipe button svg {
+    fill: white;
+}
+.swipe button:hover svg {
+    fill: gold;
+}
 .swipe button:focus {
     outline: none;
 }
 .swipe button.next {
-    right: 5px;
+    right: 0;
 }
 .swipe button.prev {
-    left: 5px;
+    left: 0;
 }
 #UpcomingEvents {
     padding: 2em 0;
@@ -106,6 +111,55 @@ main h1 {
 #UpcomingEvents article time {
     font: 16px/1.3 monospace;
 }
+
+body.lb-open {
+    overflow: hidden;
+}
+
+figure.light-box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    background: rgba(0,0,0,0.75);
+}
+figure.light-box img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 100vh;
+    max-width: 100vw;
+}
+figure.light-box button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+figure.light-box button svg {
+    fill: white;
+}
+figure.light-box button:hover svg {
+    fill: red;
+}
+figure.light-box figcaption {
+    position: absolute;
+    background: rgba(0,0,0,0.75);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 24px;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 20px;
+}
 @media(min-width:1000px) {
     nav {
         border-bottom-right-radius: 15px;
@@ -114,6 +168,9 @@ main h1 {
     footer {
         border: 2px solid #667;
         border-width: 0 2px 0 2px;
+    }
+    .swipe-wrap > figure > img {
+        max-height: 100vh;
     }
     #PhotoOfTheWeek {
         border: 2px solid #667;
