@@ -4,6 +4,11 @@ window.onload = function () {
     menuToggle.addEventListener('click', function () {
         nav.classList.toggle('open');
     });
+    let closeBtn = document.querySelector('figure.light-box button.close')
+    closeBtn.addEventListener('click', function () {
+        document.body.classList.remove('lb-open');
+        document.querySelector('.light-box figcaption').innerHTML = '';
+    });
 
     let carousel = document.querySelector('.swipe');
 
@@ -15,22 +20,12 @@ window.onload = function () {
 
     for (let i = 0; i < figures.length; i++) {
         figures[i].querySelector('img').setAttribute('title','Click to expand');
+
         figures[i].addEventListener('click', function () {
-            let lightBox = document.createElement('figure');
-            lightBox.innerHTML = this.innerHTML;
-            lightBox.classList.add('light-box');
-
-            let closeBtn = document.createElement('button');
-                closeBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
-            closeBtn.classList.add('close');
-            lightBox.appendChild(closeBtn);
-
-            closeBtn.addEventListener('click', function () {
-                this.parentElement.remove();
-                document.body.classList.remove('lb-open');
-            });
-
-            document.body.appendChild(lightBox);
+            let figcaption = document.querySelector('.light-box figcaption');
+            let img = document.querySelector('.light-box img');
+            img.src = this.querySelector('img').src;
+            if(this.querySelector('figcaption') !== null) figcaption.innerHTML = this.querySelector('figcaption').innerHTML;
             document.body.classList.add('lb-open')
         })
     }
