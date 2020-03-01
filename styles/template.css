@@ -1,0 +1,314 @@
+@import "common.css";
+main {
+    max-width: 1000px;
+    min-height: 100vh;
+    border: 2px solid #778;
+    border-width: 0 2px;
+    background: #223;
+}
+h1 {
+    margin: 0;
+    padding: 2em 0 1em 0;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+.swipe-wrap > * {
+    float: none;
+    margin: auto;
+    width: unset;
+    position: unset;
+}
+button.markup, .swipe-wrap button.markup {
+    display: block;
+    margin: 2em auto;
+    background: rebeccapurple;
+    color: white;
+    padding: 8px 10px;
+    font: bold 18px sans-serif;
+    border-radius: 5px;
+    border: 2px solid #778;
+    cursor: pointer;
+}
+.swipe > .swipe-wrap button.batsu {
+    border: 0;
+    background: transparent;
+    display: inline-block;
+    margin-left: 5px;
+    color: coral;
+    opacity: 0;
+    cursor: pointer;
+}
+.swipe > .swipe-wrap figcaption:hover button.batsu {
+    opacity: 1;
+}
+#PhotoOfTheWeek {
+    padding: 2em 0 0 0;
+    background: #223;
+}
+.swipe {
+    visibility: visible;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    transition: .2s max-height;
+}
+.swipe-wrap {
+    transition: .2s max-height;
+    overflow: hidden;
+}
+.swipe-wrap > figure {
+    font-size: 0;
+    text-align: center;
+}
+.swipe-wrap > figure > figcaption {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 7.5%;
+    line-height: 2;
+    height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.swipe-wrap > figure > figcaption * {
+    font-size: 16px;
+    display: inline-block;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.swipe-wrap > figure > img {
+    max-width: 85%;
+    margin: 0 7.5% 0 7.5%;
+    border: 2px solid #778;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 75vh;
+    border-radius: 10px;
+}
+.swipe-wrap > figure > img[src=''] {
+    height: 600px;
+    width: 85%;
+    position: relative;
+    border-radius: 0;
+}
+.swipe-wrap > figure > img[src='']::after {
+    position: absolute;
+    content: "Click to set image";
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    background: #334;
+    font: bold 32px sans-serif;
+    letter-spacing: -1px;
+    line-height: 600px;
+}
+#UpcomingEvents {
+    padding: 2em 0;
+    background: #223;
+}
+#UpcomingEvents article {
+    display: flex;
+    width: 80%;
+    margin: 2em auto;
+    padding: 2em;
+    background: #334;
+    border: 2px solid #445;
+    border-radius: 20px;
+}
+#UpcomingEvents article img {
+    width: 35%;
+    flex-shrink: 0;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 2px solid #778;
+    align-self: flex-start;
+}
+#UpcomingEvents article img[src=''] {
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0;
+}
+#UpcomingEvents article img[src='']::after {
+    position: absolute;
+    content: "Click to set image";
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    background: #334;
+    font: bold 24px sans-serif;
+    text-align: center;
+    letter-spacing: -1px;
+    line-height: 300px;
+}
+#UpcomingEvents article > div {
+    padding-left: 30px;
+    min-width: 200px;
+}
+#UpcomingEvents article h2 {
+    margin-top: 0;
+    text-align: left;
+}
+#UpcomingEvents article p {
+    text-align: left;
+}
+#UpcomingEvents article time {
+    font: 16px/1.3 monospace;
+}
+#Officers {
+    padding: 0 20px;
+    padding-bottom: 2em;
+}
+#Officers img[src=''] {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 0;
+    max-width: 400px;
+    max-height: 400px;
+    position: relative;
+    cursor: pointer;
+}
+#Officers img[src='']::after {
+    position: absolute;
+    content: "Click to set image";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #334;
+    font: bold 24px sans-serif;
+    text-align: center;
+    letter-spacing: -1px;
+    line-height: 30vh;
+}
+@media(max-width:700px) {
+    #UpcomingEvents article {
+        display: block;
+        margin: 3em auto;
+    }
+    #UpcomingEvents article > div {
+        padding: 0;
+    }
+    #UpcomingEvents article img {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto 1em auto;
+    }
+    div.flex {
+        display: block;
+        text-align: center;
+    }
+    .flex img {
+        width: 85%;
+        max-height: 50vh;
+        object-fit: cover;
+    }
+    .flex p {
+        text-align: left;
+    }
+    #Officers img {
+        float: left;
+        width: 30vw;
+        max-width: calc(100% - 40px);
+    }
+    #Officers h3 {
+        margin-top: 2em;
+    }
+    #Officers p::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@media(max-width:500px) {
+    #Officers img {
+        float: none;
+        height: 20vh;
+        width: 20vh;
+        margin-bottom: 0;
+    }
+    #Officers h3 {
+        margin-top: 1em;
+    }
+}
+#Officers > div {
+    background: #445;
+    border: 2px solid #556;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+#Officers h3 {
+    font-size: 25px;
+}
+#Officers img {
+    min-width: 25%;
+    border-radius: 50%;
+}
+.flex {
+    display: flex;
+    margin: 2em 0;
+}
+.flex > img {
+    width: 35%;
+    flex-shrink: 0;
+    margin: 20px;
+    align-self: flex-start;
+    border-radius: 5px;
+    border: 2px solid #778;
+}
+
+div.input,
+div.textarea {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.75);
+}
+div.input div {
+    margin-top: 35vh;
+    margin-bottom: 2em;
+    color: white;
+    font-size: 18px;
+}
+div.input input {
+    padding: 15px 30px;
+    font-size: 18px;
+    height: 30px;
+    background: #445;
+    color: white;
+    border: 2px solid #778;
+    border-radius: 60px;
+}
+div.textarea div {
+    background: #445;
+    border: 2px solid #778;
+    margin: 0 auto;
+    margin-top: 10vh;
+    height: 50vh;
+    overflow-y: auto;
+    max-width: 1000px;
+    text-align: left;
+    white-space: pre;
+    font: 16px/1.5 monospace;
+    width: 90%;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+div.input input:focus {
+    outline: none;
+}
+body.input {
+    overflow: hidden;
+}

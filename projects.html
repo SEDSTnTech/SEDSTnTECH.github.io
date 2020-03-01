@@ -7,7 +7,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='icon' type='image/png' href='photos/tab-icon.png'>
     <link rel='stylesheet' href='styles/projects.css'>
-    <script src='scripts/script.js'></script>
+    <script src='scripts/swipe.min.js'></script>
+    <script src='scripts/projects.js'></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
         </ul>
     </nav>
     <main>
-        <div class='flex'>
+        <div class='flex thumbnail'>
             <div>
                 <img src='photos/team-rocket.png'>
                 <h2>Rocketry Team</h2>
@@ -67,23 +68,100 @@
             <h2><span>Rocketry Team</span></h2>
             <div class='flex'>
                 <p>
-                    Our rocketry team is relatively new, but even though we have only been launching rockets for three years, we've accomplished a lot in that time.  We’ve launched a hand full of level one certification rockets for members and two club rockets. Aquila II, our second club rocket, was voted best design in the 2018 Midwest Rocketry Competition for its cold gas thrusters system to stabilize roll.  This year our rocketry team is looking to compete in the 2020 Spaceport America Cup. We will be building and launching a rocket to 10,000 ft that can carry a 10 lb payload. We have room for students of all majors on our team, so if you want to learn more about rocketry and gain skills that directly translate to the workforce joining our rocketry team is a great way to do that.  To join the team or for more information about the club projects contact Parker at <a target="_blank" href="mailto:pjwaugh@students.tntech.edu">pjwaugh@students.tntech.edu</a>.
+                    Our rocketry team is relatively new, but even though we have only been launching rockets for three
+                    years, we've accomplished a lot in that time. We’ve launched a hand full of level one certification
+                    rockets for members and two club rockets. Aquila II, our second club rocket, was voted best design
+                    in the 2018 Midwest Rocketry Competition for its cold gas thrusters system to stabilize roll. This
+                    year our rocketry team is looking to compete in the 2020 Spaceport America Cup. We will be building
+                    and launching a rocket to 10,000 ft that can carry a 10 lb payload. We have room for students of all
+                    majors on our team, so if you want to learn more about rocketry and gain skills that directly
+                    translate to the workforce joining our rocketry team is a great way to do that. To join the team or
+                    for more information about the club projects contact Parker at <a target="_blank"
+                        href="mailto:pjwaugh@students.tntech.edu">pjwaugh@students.tntech.edu</a>.
                 </p>
-                <img src='photos/team-rocket.png'>
+                <div class='swipe'>
+                    <div class='swipe-wrap'>
+                        <figure>
+                            <img src='photos/team-rocket.png'>
+                        </figure>
+                        <figure>
+                            <iframe src="https://www.youtube.com/embed/Ue4PnM4bLog" frameborder="0"
+                                allowfullscreen></iframe>
+                        </figure>
+                        <figure>
+                            <img src='photos/team-rocket.png'>
+                        </figure>
+                    </div>
+                    <button class='prev' onclick='rocketSwipe.prev()'><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path d="M18.12 4.12L10.24 12l7.88 7.88L16 22 6 12 16 2z" />
+                        </svg></button>
+                    <button class='next' onclick='rocketSwipe.next()'><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z" /></svg></button>
+                </div>
             </div>
         </article>
         <article id='BalloonTeam'>
             <h2><span>Balloon Team</span></h2>
             <div class='flex'>
-                <p>Our Balloon Team is a great way to get involved with our club. We have been launching balloons for four years and we have launched 9 high altitude balloons since then. We have a 100% recovery rate and one of our payloads got second place in the 2017 Global Space Balloon Change. Our goal is to launch a balloon every semester. We use our balloons as a platform to test equipment, run scientific experiments, complete engineering challenges, or as outreach opportunities to get other people excited about space. This semester we plan to launch a neutrally buoyant balloon which will collect data for several days, hopefully weeks. To join the team or for more information about the club projects contact Joshua at <a target="_blank" href='mailto:jddaughert43@students.tntech.edu'>jddaughert43@students.tntech.edu</a>.</p>
-                <img src='photos/balloon-team.png'>
+                <p>Our Balloon Team is a great way to get involved with our club. We have been launching balloons for
+                    four years and we have launched 9 high altitude balloons since then. We have a 100% recovery rate
+                    and one of our payloads got second place in the 2017 Global Space Balloon Change. Our goal is to
+                    launch a balloon every semester. We use our balloons as a platform to test equipment, run scientific
+                    experiments, complete engineering challenges, or as outreach opportunities to get other people
+                    excited about space. This semester we plan to launch a neutrally buoyant balloon which will collect
+                    data for several days, hopefully weeks. To join the team or for more information about the club
+                    projects contact Joshua at <a target="_blank"
+                        href='mailto:jddaughert43@students.tntech.edu'>jddaughert43@students.tntech.edu</a>.</p>
+                <div class='swipe'>
+                    <div class='swipe-wrap'>
+                        <figure>
+                            <img src='photos/balloon-team.png'>
+                        </figure>
+                        <figure>
+                            <img src='photos/balloon-team.png'>
+                        </figure>
+                        <figure>
+                            <img src='photos/balloon-team.png'>
+                        </figure>
+                    </div>
+                    <div class='shade'></div>
+                    <div class='shade'></div>
+                </div>
             </div>
         </article>
         <article id='RadioAndTelescope'>
             <h2><span>Radio/Telescope Team</span></h2>
             <div class='flex'>
-                <p>Our radio communications teams is a very new team, that was started in the last year. High altitude balloons, and rockets both require communication, sometimes as a mission critical element. The communication systems used were all third party and quite flawed. The club started this team to unify a group of people who all wanted to learn more about telescopes, satellite dishes construction, and broadband data transmission and collection. Over the next two years, we will be partnering with the physics department at Tennessee Tech in order to build an entirely remote control observatory on tech property 30 miles north of Cookeville. If you are interested in joining this project or learning more about what the radio team does, contact Will Stump for more information at <a target="_blank" href='mailto:wastump42@students.tntech.edu'>wastump42@students.tntech.edu</a>.</p>
-                <img src="photos/rt.png">
+                <p>Our radio communications teams is a very new team, that was started in the last year. High altitude
+                    balloons, and rockets both require communication, sometimes as a mission critical element. The
+                    communication systems used were all third party and quite flawed. The club started this team to
+                    unify a group of people who all wanted to learn more about telescopes, satellite dishes
+                    construction, and broadband data transmission and collection. Over the next two years, we will be
+                    partnering with the physics department at Tennessee Tech in order to build an entirely remote
+                    control observatory on tech property 30 miles north of Cookeville. If you are interested in joining
+                    this project or learning more about what the radio team does, contact Will Stump for more
+                    information at <a target="_blank"
+                        href='mailto:wastump42@students.tntech.edu'>wastump42@students.tntech.edu</a>.</p>
+                <div class='swipe'>
+                    <div class='swipe-wrap'>
+                        <figure>
+                            <img src="photos/rt.png">
+                        </figure>
+                        <figure>
+                            <img src="photos/rt.png">
+                        </figure>
+                        <figure>
+                            <img src="photos/rt.png">
+                        </figure>
+                        <figure>
+                            <img src="photos/rt.png">
+                        </figure>
+                    </div>
+                    <div class='shade'></div>
+                    <div class='shade'></div>
+                </div>
             </div>
         </article>
     </main>

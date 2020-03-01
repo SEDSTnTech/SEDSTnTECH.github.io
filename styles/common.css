@@ -187,7 +187,7 @@ footer div.socials img {
     }
     nav.open > .nav-links button {
         margin-left: 20px;
-        background-image: url(../photos/close.svg);
+        background-image: url(../photos/close-white.svg);
     }
     nav.open > .nav-links > li.logo {
         display: block;
