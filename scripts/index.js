@@ -35,15 +35,7 @@ window.onload = function () {
         draggable: true,
         continuous: true,
         disableScroll: false,
-        stopPropagation: false,
-        callback: function () {
-            let pos = window.carousel.getPos();
-            let figures = document.querySelectorAll('.swipe figure');
-            let elem = figures[pos];
-            let height = elem.clientHeight;
-            document.querySelector('.swipe').style.maxHeight = height + 'px';
-            document.querySelector('.swipe-wrap').style.maxHeight = height + 'px';
-        }
+        stopPropagation: true
     });
 }
 

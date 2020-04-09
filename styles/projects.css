@@ -22,7 +22,7 @@ div.flex.thumbnail>div {
     position: relative;
     border: 2px solid #778;
     border-radius: 10px;
-    margin: 10px;
+    margin: 1em
 }
 
 div.flex.thumbnail>div>img {
@@ -71,8 +71,8 @@ article>div.flex>img {
 }
 
 .swipe {
-    flex: 1;
-    margin-top: 2em;
+    flex: 2;
+    margin-top: 1.2em;
 }
 
 .swipe figure > * {
@@ -81,6 +81,9 @@ article>div.flex>img {
     border: 2px solid #778;
     border-radius: 10px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .swipe figure > iframe {
     height: 300px;
@@ -95,14 +98,6 @@ div.shade {
     background: transparent;
     font-size: 0;
     border: 0;
-}
-div.swipe > div:nth-child(2) {
-    background: linear-gradient(90deg, rgba(51,51,68,1) 0%, rgba(255,255,255,0) 100%);
-    left: 0
-}
-div.swipe > div:nth-child(3) {
-    right: 0;
-    background: linear-gradient(270deg, rgba(51,51,68,1) 0%, rgba(255,255,255,0) 100%);
 }
 .swipe button {
     position: absolute;
@@ -126,11 +121,13 @@ div.swipe > div:nth-child(3) {
 }
 .swipe button.next {
     right: 0;
-    background: linear-gradient(270deg, rgba(51,51,68,1) 0%, rgba(255,255,255,0) 100%);
+    background: transparent;
+    background-image: linear-gradient(270deg,  #334 0%, rgba(51, 51, 68,0) 100%);
 }
 .swipe button.prev {
     left: 0;
-    background: linear-gradient(90deg, rgba(51,51,68,1) 0%, rgba(255,255,255,0) 100%);
+    background: transparent;
+    background-image: linear-gradient(90deg, #334 0%, rgba(51, 51, 68,0) 100%);
 }
 
 @media(min-width:1000px) {
@@ -156,9 +153,13 @@ div.swipe > div:nth-child(3) {
         max-height: 50vh;
         object-fit: cover;
     }
+    div.flex.thumbnail>div{
+        max-width: 400px;
+        margin: 2em auto;
+    }
 
     .flex p {
-        text-align: left;
+        text-align: justify;
     }
 
     div.flex>div {
