@@ -13,13 +13,12 @@ main h1 {
 }
 .swipe {
     margin-top: 20px;
-    align-items: center;
-}
-.swipe-wrap {
-    
 }
 .swipe-wrap figure {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 .swipe-wrap figure img {

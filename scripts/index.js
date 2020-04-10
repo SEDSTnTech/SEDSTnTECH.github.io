@@ -13,11 +13,6 @@ window.onload = function () {
     let carousel = document.querySelector('.swipe');
 
     let figures = document.querySelectorAll('.swipe figure');
-    let elem = figures[0];
-    let height = elem.clientHeight;
-    document.querySelector('.swipe').style.maxHeight = height + 'px';
-    document.querySelector('.swipe-wrap').style.maxHeight = height + 'px';
-
     for (let i = 0; i < figures.length; i++) {
         figures[i].querySelector('img').setAttribute('title','Click to expand');
 
@@ -38,12 +33,3 @@ window.onload = function () {
         stopPropagation: true
     });
 }
-
-window.addEventListener('resize', function () {
-    let pos = window.carousel.getPos();
-    let figures = document.querySelectorAll('.swipe figure');
-    let elem = figures[pos];
-    let height = elem.clientHeight;
-    document.querySelector('.swipe').style.maxHeight = height + 'px';
-    document.querySelector('.swipe-wrap').style.maxHeight = height + 'px';
-})
