@@ -78,7 +78,7 @@ nav {
     display: none;
     -webkit-appearance: none;
     background: transparent;
-    background-image: url(../photos/menu.svg);
+    background-image: url('../photos/assets/menu.svg');
     background-repeat: no-repeat;
     background-position: center;
     border: 0;
@@ -187,7 +187,7 @@ footer div.socials img {
     }
     nav.open > .nav-links button {
         margin-left: 20px;
-        background-image: url(../photos/close-white.svg);
+        background-image: url('../photos/assets/close-white.svg');
     }
     nav.open > .nav-links > li.logo {
         display: block;
