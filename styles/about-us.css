@@ -34,6 +34,10 @@ h1,h2 {
     text-align: center;
 }
 
+em {
+    color: #ccb3e6
+}
+
 .meetings > div {
     width: calc(100%/3 - 20px);
     margin: 0 10px;
@@ -54,7 +58,10 @@ h1,h2 {
     padding: 0 8px;
 }
 .columns {
-    columns: 3;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 20px;
+    columns: 2;
 }
 #Officers > div {
     background: #445;
@@ -92,7 +99,7 @@ h1,h2 {
         text-align: left;
     }
     .columns {
-        columns: 2;
+        columns:1;
     }
     .meetings div {
         width: 85%;
@@ -119,9 +126,6 @@ h1,h2 {
     }
 }
 @media(max-width:500px) {
-    .columns {
-        columns: 1;
-    }
     #Officers img {
         float: none;
         height: 20vh;
