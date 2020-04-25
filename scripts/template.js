@@ -5,9 +5,9 @@ window.onload = function () {
             let element = this;
             document.body.classList.add('input');
             let divInput = document.createElement('div');
-            divInput.classList.add('input');
+                divInput.classList.add('input');
             let description = document.createElement('div');
-                description.innerText = "Name of file, should be in photos directory"
+                description.innerText = "Name of file, should be in " + element.dataset.src + " directory";
             let input = document.createElement('input');
             input.type = "text";
 
@@ -16,7 +16,7 @@ window.onload = function () {
             button.innerText = 'Set Path';
             button.addEventListener('click', function () {
                 element.setAttribute('onerror', 'fallback(this)');
-                element.src = "photos/" + input.value;
+                element.src = element.dataset.src + input.value;
                 this.parentElement.remove();
                 document.body.classList.remove('input');
             });
@@ -43,6 +43,7 @@ window.onload = function () {
             document.body.classList.add('input');
             let markup = this.previousElementSibling.cloneNode(true);
             markup.querySelector('img').removeAttribute("onerror");
+            markup.querySelector('img').removeAttribute("data-src");
             let buttons = markup.querySelectorAll('button');
             for (j=0; j<buttons.length; j++) {
                 buttons[j].remove();

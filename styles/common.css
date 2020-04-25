@@ -212,6 +212,7 @@ footer div.socials img {
 @supports(backdrop-filter:blur(30px)) {
     nav.open .nav-links {
         background: rgba(34, 34, 51,0.75);
-        backdrop-filter:blur(30px)
+        backdrop-filter:blur(30px);
+        -webkit-backdrop-filter:blur(30px);
     }
 }

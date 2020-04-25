@@ -26,6 +26,12 @@ main h1 {
     justify-content: center;
     overflow: hidden;
 }
+.swipe-wrap figure div {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 .swipe-wrap figure img {
     box-sizing: border-box;
     max-height: 85%;
@@ -65,11 +71,11 @@ main h1 {
 }
 .swipe button.next {
     right: 0;
-    background: linear-gradient(270deg, rgba(34,34,51,1) 0%, rgba(51, 51, 68,0) 100%);
+    background: linear-gradient(270deg, #223 0%, rgba(34,34,51,0) 100%);
 }
 .swipe button.prev {
     left: 0;
-    background: linear-gradient(90deg, rgba(34,34,51,1) 0%, rgba(51, 51, 68,0) 100%);
+    background: linear-gradient(90deg, #223 0%, rgba(34,34,51,0) 100%);
 }
 #UpcomingEvents {
     padding: 2em 0;
@@ -126,6 +132,7 @@ figure.light-box {
 @supports(backdrop-filter:blur(30px)) {
     figure.light-box {
         backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
     }
 }
 
